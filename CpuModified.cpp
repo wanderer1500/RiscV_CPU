@@ -625,7 +625,7 @@ string to_str(int num)
     return result;
 }
 
-int signedExtend(string imm)
+int signExtender(string imm)
 {
     string extended_imm = imm;
     if (imm[0] == '0')
@@ -921,7 +921,7 @@ void ID(IDEX &idex, IFID &ifid, EXMO &exmo)
     str[6] = ir.substr(20, 5);
 
     // Assign values to idex fields, similar to the working code
-    idex.JPC = ifid.DPC + 4 * signedExtend(str[1]);
+    idex.JPC = ifid.DPC + 4 * signExtender(str[1]);
     idex.DPC = ifid.DPC;
     idex.imm1 = str[2];
     idex.imm2 = str[3];
